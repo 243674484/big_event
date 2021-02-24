@@ -41,9 +41,9 @@ function renderAvatar(user) {
     // 将昵称或用户名渲染到页面中
     $("#welcome").html("欢迎 " + username)
     // 判断该账户是否有图片头像
-    if (user.picture) {
+    if (user.user_pic !== null) {
         // 如果有头像，将头像图片渲染到layui-nav-img容器中，并显示
-        $(".layui-nav-img").attr("src", user.user_picture).show();
+        $(".layui-nav-img").attr("src", user.user_pic).show();
         // 将文字头像隐藏
         $(".text-avatar").hide()
     } else {

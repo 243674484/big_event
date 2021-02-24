@@ -23,15 +23,4 @@ $.ajaxPrefilter(function (option) {
         }
     }
 
-
-
-
-    // option.success = function (res) {
-    //     if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！") {
-    //         // 强制清除token
-    //         localStorage.removeItem("token")
-    //         // 强制跳转
-    //         location.href = "/login.html"
-    //     }
-    // }
 })
