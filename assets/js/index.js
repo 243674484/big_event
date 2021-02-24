@@ -24,7 +24,7 @@ function getUserInfo() {
         type: "GET",
         url: "/my/userinfo",
         // ajax中的header验证在ajaxPrefilter中已经包含
-        success(res) {
+        success: function (res) {
             if (res.status !== 0) {
                 return layer.msg(res.message)
             }

@@ -54,7 +54,7 @@ $(function () {
             type: "POST",
             //serialize()：快速获取表单数据
             data: $(this).serialize(),
-            success(res) {
+            success: function (res) {
                 if (res.status !== 0) {
                     // layer弹出层提示框
                     return layer.msg(res.message)
