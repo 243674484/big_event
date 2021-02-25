@@ -51,6 +51,7 @@ $(function () {
     // 声明变量，准备存放 修改分类的弹出层index值
     let layerEdit = null;
     let form = layui.form
+    // 事件委托，为产生的弹出层中的按钮添加点击事件
     $("tbody").on("click", ".btn-edit", function () {
         layerEdit = layer.open({
             type: "1",
@@ -69,11 +70,14 @@ $(function () {
                     return layer.msg(res.message)
                 }
                 // 向form-edit表单中填充数据
+                // 使用form.val方法必须在form表单中添加lay-filter属性
+                // form.val的第一个参数是lay-filter的属性值，第二个参数是数据源
                 form.val("form-edit", res.data)
             }
         })
     })
     // 监听提交修改文章类别，事件委托
+    // 为修改文章类别的弹出层表单添加提交事件
     $("body").on("submit", "#form-edit", function (e) {
         e.preventDefault()
         $.ajax({

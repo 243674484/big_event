@@ -3,6 +3,7 @@
 // 在ajax发起请求之前，将url的路径完整拼接
 $.ajaxPrefilter(function (option) {
     option.url = "http://ajax.frontend.itheima.net" + option.url
+    // option.url = "http://api-breakingnews-web.itheima.net" + option.url
     // 判断url路径中是否包含/my/路径，包含时需要验证请求头  
     if (option.url.includes("/my/")) {
         option.headers = {
@@ -22,5 +23,6 @@ $.ajaxPrefilter(function (option) {
             location.href = "/login.html"
         }
     }
+
 
 })
